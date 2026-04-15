@@ -1,0 +1,53 @@
+ssh -p 2220 bandit0@bandit.labs.overthewire.org
+password: bandit0
+
+Level 0
+cat readme
+password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+Level 1
+cat ./-
+password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+Level 2
+cat ./"--spaces in this filename--"
+password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+Level 3
+cd inhere
+ls -A
+cat ...Hiding-From-You
+password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+Level 4
+cd inhere
+file ./*
+password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+Level 5
+cd inhere
+find . -type f -size 1033c !- executable
+cd maybehere07
+cat .file2
+password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+Level 6
+find / -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
+password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+Level 7
+grep -n "millionth" data.txt
+password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+Level 8
+sort data.txt | uniq -u
+password: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+Level 9
+strings data.txt | grep "==*"
+password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+Level 10
+base64 -d data.txt
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
