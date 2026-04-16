@@ -1,0 +1,18 @@
+A shell is a software program that acts as an intermediary between a user and the operating system kernel. It gathers input from the user and executes programs based on that input.
+
+1. Bourne Shell (sh)
+- Ancestor of most modern shells
+- Fast and lightweight, but lacks interactive features like command history or tab completion
+- Primary use case is system scripting , it is the standard for writing portable system startup and configuration scripts because it is found on almost every Unix-like system
+
+2. Bourne Again Shell (bash)
+- Default for most Linux distros and older MacOS versions
+- An evolution of sh that adds user-friendly features like arrow-key navigation, command history, and aliases
+- Used for general-purpose Linux administration by developers and sysadmins who need a balance between scripting power and interactive ease
+
+3. Z Shell (zsh)
+- Default for MacOS, highly customisable with plugins and theme
+
+4. Powershell
+- Developed by Microsoft, this shell is fundamentally different because it is object-oriented
+- While other shells pass text strings, PowerShell passes structured data objects
