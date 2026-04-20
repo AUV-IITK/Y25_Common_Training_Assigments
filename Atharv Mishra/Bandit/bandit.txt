@@ -1,4 +1,3 @@
- Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
  ssh bandit0@bandit.labs.overthewire.org -p 2220
  nano readme
 found password
