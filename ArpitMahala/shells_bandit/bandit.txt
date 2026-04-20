@@ -1,0 +1,118 @@
+level 0
+
+ssh bandit0@bandit.labs.overthewire.org -p 2220 
+password bandit0
+
+level 1
+
+cat readme
+original purpose - contatenate 2 files and display output
+but has been used to just show one file in terminal
+password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+log out command: exit
+
+level 2
+By adding ./ (representing the current directory) to the start of the filename, you ensure the command does not see the dash as the first character of the argument.
+password 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+level 3
+cat ./"--spaces in this filename--"   or    cat ./--spaces\ in\ this\ filename--  works
+password MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+level 4
+ls -a    to see hidden files
+.  ..  ...Hiding-From-You
+
+cat ./...Hiding-From-You
+
+password 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+level 5
+bandit4@bandit:~/inhere$ file ./*
+./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+
+
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+
+level 6
+used: wc -c */*
+no file of size 1033 bytes seen
+might be a hidden file
+
+used find -size 1033c
+./maybehere07/.file2
+
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+level 7
+find / -group bandit6 -user bandit7 -size 33c
+gives something like this-
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/udisks2’: Permission denied
+
+cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+level 8
+bandit7@bandit:~$ grep "millionth" ./data.txt 
+millionth	dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+level 9
+sort ./data.txt | uniq -c
+     10 0gGmyPWCYc25YtbwSP3kcNZdu9TFIB6s
+     10 0GWwWUcG1DRo7zNiaZXfsSEGaHie3ij0
+     10 0o1vydddtEpnKIsb6kFSbYcq0HPh8Mig
+     10 0YJPG1dC42w6W80WLWO5FuRPKIlHuKQ3
+     10 2e82EBdaXT27y7li2PoUKkD8IqsECsL1
+     10 2voSd7kyMS0vZJ4vuQms4WhOKcM2sJUV
+     10 3AMfEqrsPrROH3Evcy5s5DCtB72Ahj69
+     10 3ifGXW6S8fVx0mfimxwjhnCoB2ddfAbU
+     10 3VFt0jFn4RflJS1uEjLtgwR5ZZMiWGHa
+      1 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM   -- password
+     10 4mGM8Yu0JIA0MXzlGWu3WFPoMwUvSBp4
+     10 4N82O3SBYWXlQmnsFA7sFoj0BQqxQfpF
+     10 4O3i4AyA1iBWR8hrL62yPNd09fr4dLYD
+     10 4oXVNcmujmCdVGyqMWJ6vDPQ2D8FXVJu
+
+
+level 10
+bandit9@bandit:~$ strings ./data.txt | grep "="
+,U=\[
+========== the
+=>XO
+Qe=B
+2========== password
+=5J"
+========== is
+=oFt2
+9=Dc
+Yh6=o
+=d\!#d=
+H/=Q
+========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+bWG=cE>
+s=>5j
+[xxhr=*
+
+
+level 11
+bandit10@bandit:~$ base64 -d ./data.txt 
+The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+
+
+
+
