@@ -1,1 +1,0 @@
-This folder contains a txt file outlining the Linux CLI commands used and steps for Bandit problems 1 to 22 and also a markdown file describing the common types of shells used with their usecases and pros/cons.
