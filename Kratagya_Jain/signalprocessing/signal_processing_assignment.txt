@@ -1,0 +1,82 @@
+from scipy.io import wavfile
+from scipy.signal import correlate
+import numpy as np
+
+def delay_signal(sig, delay_sec, sr):
+    delay_samples = int(delay_sec * sr)
+    return np.concatenate((np.zeros(delay_samples), sig))
+
+def get_corr(a, b):
+    return np.sum(a * b)
+
+
+
+def pad_to_length(sig, length):
+    return np.pad(sig, (0, length - len(sig)))
+
+
+def main():
+
+    fs, signal = wavfile.read(r"VS CODE\python\WhatsApp Audio 2026-04-16 at 12.12.56 AM.wav")
+
+    signal = signal.astype(np.float32)
+    if len(signal.shape) == 2:
+        signal = signal.mean(axis=1)
+
+    signal = signal / np.max(np.abs(signal))
+
+    sig_0 = delay_signal(signal, 0, fs)
+    sig_1 = delay_signal(signal, 1, fs)
+    sig_2 = delay_signal(signal, 2, fs)
+    sig_3 = delay_signal(signal, 3, fs)
+
+    max_len = max(len(sig_0), len(sig_1), len(sig_2), len(sig_3))
+
+    sig_0 = pad_to_length(sig_0, max_len)
+    sig_1 = pad_to_length(sig_1, max_len)
+    sig_2 = pad_to_length(sig_2, max_len)
+    sig_3 = pad_to_length(sig_3, max_len)
+
+
+    corr_0_1 = get_corr(sig_0, sig_1)
+    corr_1_1 = get_corr(sig_1, sig_1)
+    corr_2_1 = get_corr(sig_2, sig_1)
+
+    print("Correlation with 1s reference:")
+    print("0s vs 1s:", corr_0_1)
+    print("1s vs 1s:", corr_1_1)
+    print("2s vs 1s:", corr_2_1)
+
+    new_ref = sig_0 + sig_2
+
+    
+    corr_0 = get_corr(sig_0, new_ref)
+    corr_1 = get_corr(sig_1, new_ref)
+    corr_2 = get_corr(sig_2, new_ref)
+    corr_3 = get_corr(sig_3, new_ref)
+
+    print("\nCorrelation with new reference (0s + 2s):")
+    print("0s:", corr_0)
+    print("1s:", corr_1)
+    print("2s:", corr_2)
+    print("3s:", corr_3)
+
+
+
+    return
+
+main()
+
+
+OUTPUT:-
+
+Correlation with 1s reference:
+0s vs 1s: 2.405682255048305
+1s vs 1s: 18631.619445080403
+2s vs 1s: 2.405682255048305
+
+Correlation with new reference (0s + 2s):
+0s: 18661.836267068982
+1s: 4.81136451009661
+2s: 18661.836267068982
+3s: -1.82414041319862
