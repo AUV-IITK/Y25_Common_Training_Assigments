@@ -1,0 +1,39 @@
+1.	Command Prompt (CMD)
+  CMD is the default command-line tool in Windows.
+  Use cases:
+    •	Basic file operations 
+    •	Navigating folders 
+    •	Running simple commands 
+  Some commands:
+    •	dir - shows files in a folder 
+    •	cd - change directory 
+    •	del - delete files 
+  Power:
+    CMD is easy to use but not very powerful. It is mainly used for simple tasks.
+
+2. Bash
+  Bash is commonly used in Linux and macOS systems.
+  Use cases:
+    •	Programming 
+    •	Server management 
+    •	Writing scripts 
+  Some commands:
+    •	ls - list files 
+    •	grep - search text 
+    •	rm – remove files 
+  Power:
+    Bash is more powerful than CMD. It allows better control of the system and supports scripting.
+    
+3. PowerShell
+  PowerShell is an advanced shell made by Microsoft.
+  Use cases:
+    •	System administration 
+    •	Automation 
+    •	Managing Windows systems 
+  Some commands:
+    •	Get-Process - lists the processes currently going on in the computer
+    •	Get-ChildItem - lists files
+    •	Stop-Process – Stops a running program
+  Power:
+    PowerShell is very powerful. It can handle complex tasks and gives more control over the system than CMD.
+
