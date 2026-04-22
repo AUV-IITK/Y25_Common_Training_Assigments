@@ -1,11 +1,11 @@
-// 🔹 GLOBAL VARIABLES (TOP of code)
+
 int ldrPin = A0;
 int tempPin = A1;
 
 int lightLED = 7;
 int fanLED = 8;
 
-bool lightState = false;   // ✅ HERE (outside everything)
+bool lightState = false;  
 
 void setup() {
   pinMode(lightLED, OUTPUT);
@@ -16,7 +16,7 @@ void setup() {
 void loop() {
   int ldrValue = analogRead(ldrPin);
 
-  // 🌙 Light Logic (fixed)
+  
   if (!lightState && ldrValue < 450) {
     lightState = true;
     digitalWrite(lightLED, HIGH);
@@ -26,12 +26,12 @@ void loop() {
     digitalWrite(lightLED, LOW);
   }
 
-  // 🌡️ Temperature
+  
   int tempValue = analogRead(tempPin);
   float voltage = tempValue * (5.0 / 1023.0);
   float temperature = (voltage - 0.5) * 100;
 
-  // Fan Logic
+  
   if (temperature > 30) {
     digitalWrite(fanLED, HIGH);
   } else {
