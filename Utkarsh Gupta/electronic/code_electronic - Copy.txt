@@ -1,0 +1,51 @@
+int temp = A1;
+int ams = A2;
+int red = 6;
+int blue = 5;
+
+float T0 = 25.0;
+float t = 20.0;
+
+float A_zero = 900.0; 
+float a = 300.0;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  analogWrite(red, 0);
+  
+  pinMode(blue, OUTPUT);
+  analogWrite(blue, 0);
+}
+
+void loop() {
+  int Temp = analogRead(temp);
+  float T = (Temp * 5.0 / 1024.0 - 0.50) / 0.01;
+  float dT = (T - T0);
+
+  if (dT >= t) {
+    analogWrite(red, 255);
+  }
+  
+  if (dT < t && dT > 0) {
+    int x = (dT / t) * 255;
+    analogWrite(red, x);
+  } else if (dT <= 0) {
+    analogWrite(red, 0);
+  }
+
+  int ams_val = analogRead(ams);
+  
+  float A = (ams_val * A_zero / 1024.0);
+  float dA = (A_zero - A);
+
+  if (dA >= a) {
+    analogWrite(blue, 255);
+  }
+  
+  if (dA < a && dA > 0) {
+    int x = (dA / a) * 255;
+    analogWrite(blue, x);
+  } else if (dA <= 0) {
+    analogWrite(blue, 0);
+  }
+}
