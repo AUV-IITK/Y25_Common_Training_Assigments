@@ -1,0 +1,26 @@
+ Logic Explanation
+Light : Reads the LDR sensor from pin A0. If the light level drops below 400 (darkness), digital pin 2 turns ON. Otherwise, it turns OFF.
+Fan : Reads the TMP36 sensor from pin A1 and converts the signal to Celsius. If the temperature rises above 30°C, digital pin 3 turns ON. Otherwise, it turns OFF.
+Both conditions process concurrently without interrupting each other.
+
+
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+
+void loop() {
+  if (analogRead(A0) < 400) {
+    digitalWrite(2, HIGH);
+  } else {
+    digitalWrite(2, LOW);
+  }
+
+  float celsius = (analogRead(A1) * 0.488) - 50.0;
+  if (celsius > 30.0) {
+    digitalWrite(3, HIGH);
+  } else {
+    digitalWrite(3, LOW);
+  }
+  delay(100);
+}
