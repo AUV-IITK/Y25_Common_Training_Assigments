@@ -1,0 +1,73 @@
+ssh bandit5@bandit.labs.overthewire.org -p 2220
+password 0  ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+password in 0 to 1 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+password of 1 to 2 MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+password 2 to 3 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+password in 3 to 4 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+password in 4 to 5 HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+password 5 to 6 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+password in 6 to 7 dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+explaination 
+Level 0: The Setup
+Goal: Log into the game server using the command line.
+
+Action: ssh bandit0@bandit.labs.overthewire.org -p 2220 (Password: bandit0)
+
+Reason: SSH (Secure Shell) is the standard tool to securely log into remote Linux computers. The -p 2220 forces it to use port 2220 instead of the default port 22.
+
+Level 0 → 1
+Goal: Read the password from a standard file named readme.
+
+Action: cat readme
+
+Reason: The cat (concatenate) command is the simplest and most common way to read a file and print its contents directly to your screen.
+
+Level 1 → 2
+Goal: Read a file named - (a dash).
+
+Action: cat ./-
+
+Reason: In Linux, a lone - usually tells a command to expect input from the keyboard, not a file. By adding ./ (which means "this current folder"), you force cat to treat it as a literal filename.
+
+Level 2 → 3
+Goal: Read a file named spaces in this filename.
+
+Action: cat "spaces in this filename"
+
+Reason: The terminal uses spaces to separate different commands. If you don't use quotation marks, the computer thinks you are asking it to open four completely different files (spaces, in, this, filename).
+
+Level 3 → 4
+Goal: Find a hidden file inside the inhere folder.
+
+Action: Type cd inhere, then ls -a, then cat .hidden.
+
+Reason: cd changes folders. In Linux, any file that starts with a dot (like .hidden) is invisible by default. You must use the -a (all) flag with ls to reveal it.
+
+Level 4 → 5
+Goal: Find the one human-readable file hiding among a bunch of messy binary files.
+
+Action: Type cd inhere, then file ./*, then cat the one that says "ASCII text".
+
+Reason: If you cat a binary file, it prints unreadable gibberish. The file command peeks inside the files and tells you what kind of data they hold without opening them.
+
+Level 5 → 6
+Goal: Find a specific file lost in a maze of folders based on its exact properties (1033 bytes, not executable).
+
+Action: find . -type f -size 1033c ! -executable
+
+Reason: The find command searches folders based on math and logic. Here, you tell it: search the current folder (.), look only for files (-type f), exactly 1033 bytes (-size 1033c), and specifically NOT (!) executable.
+
+Level 6 → 7
+Goal: Search the entire server for a file owned by bandit7, group bandit6, and exactly 33 bytes.
+
+Action: find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+
+Reason: Searching the root (/) directory throws hundreds of "Permission denied" errors on your screen because you don't have admin rights. The 2>/dev/null trick takes all those error messages (Data Stream 2) and dumps them into the digital trash can, leaving only the correct answer visible.
+
+Level 7 → 8
+Goal: Find the password buried in a massive file next to the word "millionth".
+
+Action: grep "millionth" data.txt
+
+Reason: Opening a massive file to read manually takes too long. grep acts as a highly precise search filter, instantly finding the specific keyword and printing only that single line.
