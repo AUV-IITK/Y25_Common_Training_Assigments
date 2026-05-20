@@ -1,4 +1,4 @@
-# Assignment 2 README
+# Assignment 2
 
 ## Overview
 Assignment 2 focuses on Linux operating system concepts through two complementary parts: a comparative study of shells and command-line interfaces, and a practical walkthrough of the OverTheWire Bandit wargame from levels 0 to 10.
