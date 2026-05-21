@@ -1,0 +1,57 @@
+
+1.	LEVEL 0:
+  Command used :-  ssh
+    •	ssh  helps us to connect to a remote server
+    •	-p is a flag for defining which port we are using
+
+2.	LEVEL 0 -> 1
+  Command used :- ls and cat
+    •	ls lists the files inside the current directory
+    •	cat is used for reading the text inside a file
+
+3.	LEVEL 1 -> 2
+  Command user :- cat 
+    •	For using a file named with some type of special characters such as – , space, etc we need to use ./”name” so that the name is not mistaken for some command
+
+4.	LEVEL 2 -> 3
+  Similar to level 1 -> 2
+
+5. LEVEL 3 -> 4
+  Commands used :-  cd, find
+    •	cd is for changing the directory
+    •	If we just use ls the file will not be listed here since the file name starts from a “.” (hidden basically) so we need to use find command for finding this file.
+
+6.	LEVEL 4 -> 5
+  Command used :- file ./*
+    •	This command lists the data type of all files inside current directory
+    •	We can then check for file having ASCII text as the data type manually.
+
+7.	LEVEL 5 -> 6
+  Command used :- find -type f -size 1033c
+    •	find command finds what we need using the conditions we give.
+    •	-type f -> this flag is for checking for file
+    •	-size 1033c -> this flag then searches for files with size 1033 bytes(c represents bytes)
+
+8.	LEVEL 6 -> 7
+  Command used :- find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+    •	find / searches from root directory.
+    •	-user, -group searches for the given user and group
+    •	2>/dev/null suppresses error messages so they don’t appear on screen
+
+9.	LEVEL 7 -> 8
+  Command used :- grep
+    •	grep searches for patterns and give the line containing the pattern
+
+10. LEVEL 8 -> 9
+	Commands used :- sort and uniq
+    •	sort sorts the lines alphabetically
+    •	uniq compares two consecutive lines and if they are not same it shows the line
+
+11.  LEVEL 9 -> 10
+	Commands used :- strings, grep
+    •	strings show all the human readable text within the file 
+    •	using grep we search for “==”
+
+12. LEVEL 10 -> 11
+	Command used :- base64 -d
+    •	It decrypts the data from base64 to normal text.
