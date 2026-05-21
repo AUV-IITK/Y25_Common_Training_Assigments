@@ -1,0 +1,36 @@
+LINUX OS ASSIGNMENT
+ 
+SHELLS
+
+It is an program that acts as an interface to interact with OS using different commands.
+
+TYPES OF SHELLS
+
+1. Bash (Bourne Again Shell)
+
+    -default on linux
+    - commands: ls, cd, grep,pwd
+    use :  daily use , development
+
+2. Zsh
+
+    -More features than Bash
+    -Better autocomplete & customization
+    use : productivity, customization
+
+3. PowerShell
+
+   -Microsoft shell
+   -Object-based, very powerful
+    use : automation, working with Windows
+
+4. Anaconda prompt
+   
+   -Not a real shell
+   -Used for Python environments
+    use:  for managing python environments and running data science tools.
+5. CMD
+ 
+   -Not used in Linux
+   -very basic
+    use :  basic command-line tasks in Windows.
