@@ -1,0 +1,63 @@
+CMD: 
+text-based interface used to execute commands, automate tasks via batch files, and manage system operations in Windows
+
+To run press Win + R and type cmd and select command prompt 
+
+based on MS-DOS and has been around since the 80s.
+
+Uses simple commands like dir, cd, and copy.
+
+can’t handle complex logic or "pipe" objects between commands easily.
+
+a Pipe is a command that takes the output of one process and feeds it directly as the input to another.
+
+ls | grep "Pro", ls command lists files, but instead of printing them to your screen, it sends them through the "pipe" to grep, which filters for files containing the word "Pro."
+
+Logic commands allow a system to perform actions based on whether a condition is true or false. 
+mkdir NewFolder && cd NewFolder (Only enters the folder if it was successfully created).
+ping google.com || echo "Internet is down"  Only runs the second command if the first fails.
+
+
+PowerShell
+Basics: A modern, cross-platform task automation solution and scripting framework built on the .NET framework.
+
+Data Handling: Unlike CMD or Bash, which are text-based, PowerShell is object-oriented. It pipes actual data objects rather than just lines of text.
+
+Syntax: Uses a "Verb-Noun" structure called Cmdlets (e.g., Get-Service, Stop-Process, New-Item).
+
+Usage: The standard for modern Windows system administration and complex enterprise automation.
+
+Bash (Bourne Again Shell)
+Basics: The default shell for most Linux distributions and macOS. It is the "universal language" of web servers and cloud computing.
+
+Logic: Heavily focused on small, modular tools that interact through text streams.
+
+Highly efficient for string manipulation and file processing.
+
+Access on Windows: Available via WSL (Windows Subsystem for Linux) or Git Bash.
+
+
+Zsh (Z Shell)
+Basics: An extended version of Bash with many improvements and powerful features. It is now the default shell on macOS.
+
+Features: Includes advanced tab-completion, spelling correction, and "globbing" (advanced file searching).
+
+Customization: Highly popular due to frameworks like "Oh My Zsh," which allow users to add themes and plugins for a highly visual and productive terminal experience.
+
+Fish (Friendly Interactive Shell)
+Basics: A smart, user-friendly shell designed to be "discoverable." It focuses on being helpful out of the box without needing complex configuration.
+
+Features: Offers "autosuggestions" (gray text that predicts what you want to type based on history) and syntax highlighting as you type.
+
+Difference: Unlike Bash or Zsh, it does not strictly follow the POSIX standard, meaning some standard Bash scripts might not run in Fish without modification.
+
+
+
+Anaconda (Conda)
+Basics: Not a shell itself, but a distribution and package manager (conda) used within shells.
+
+Purpose: Specifically designed for Python/R data science and machine learning.
+
+Environments: Allows you to create "virtual environments" to keep project dependencies separate (e.g., Project A uses Python 3.8, while Project B uses Python 3.12).
+
+Interface: Usually accessed via the "Anaconda Prompt," which is a standard shell (CMD or PowerShell) pre-configured with the Conda paths.
