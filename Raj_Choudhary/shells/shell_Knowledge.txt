@@ -1,0 +1,42 @@
+Shells 
+shell is a interface between user and operating system which is used to execute commands, run programs, and automate tasks
+
+=> Types of Shells
+1. Command Prompt (cmd)
+- Basic Windows shell
+- Limited scripting capability
+- Low control over system
+- Used for simple commands
+
+2. Bash (Bourne Again Shell)
+- Default shell in Linux/Mac
+- Strong scripting support
+- High system control
+- Used in development, servers, automation
+
+3. PowerShell
+- Advanced Windows shell
+- Object-based (not text-based)
+- Very powerful scripting
+- Used in system administration and DevOps
+
+4. Anaconda Prompt
+- Shell for Python environments
+- Used in Machine Learning and Data Science
+- Manages packages using conda
+- Limited general system control
+
+Key Differences
+
+- cmd → low power, basic usage
+- Bash → high power, best for Linux and development
+- PowerShell → very high power, automation and admin tasks
+- Anaconda → Python-focused, ML workflows
+
+Use Cases
+
+- cmd → simple Windows operations
+- Bash → coding, servers, Linux systems
+- PowerShell → automation, system management
+- Anaconda → data science, ML environments
+

@@ -1,0 +1,46 @@
+Notes of Bandit Games :
+1. first used the bandit0 as password and make the connection to the bandit
+2. Used ls command for the scanning of the files in the home directory and then found the readme as in question , used the nano command to read it 
+
+text in Readme :
+Congratulations on your first steps into the bandit game!!
+Please make sure you have read the rules at https://overthewire.org/rules/
+If you are following a course, workshop, walkthrough or other educational activity,
+please inform the instructor about the rules as well and encourage them to
+contribute to the OverTheWire community so we can keep these games free!
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+-> I get the pass word for the next stage .
+-> Used the command for the next stage logging bangit1 :$ ssh -p 2220 bandit1@bandit.labs.overthewire.org and pasting the password 
+
+3. Okay so we have to open a file named - in the home directory and I used the command nano ./- for opening it .and got the password :
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+ssh -p 2220 bandit2@bandit.labs.overthewire.org - then added the password 
+
+4. open the file I used the commands 
+-> ls 
+-> nano ./"-spaces in this filename"
+-> get the password : MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+-> ssh -p 2220 bandit3@bandit.labs.overthewire.org and give the password 
+
+5. changed the dir to inhere using : cd inhere 
+   found the hidden files using ls -a 
+   used the command cat ...Hiding-From-You for getting the password :2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+6. cd inhere 
+   nano ./-file00 : d% h U  N?CN qy ^X      B ^G g4V <^H
+   nano ./-file01 : ^Di ,  %? m^WҶ Q ^E 3 Z    ^T^WA )^d 
+                  :   ^Tk    ;;^^Nϱ  m R]Y     Ӭ N Im
+    got the password in file -file07 :4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+   Time Saving : Use the command find . -type f -exec file {} + |grep "text" and get the file name -file07
+
+7. ls 
+   cd inhere 
+   find . -type f -size 1033c ! -executable : for finding the file and get the path of hidden file extracting the password :HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+   for extraction : cd maybehere07 
+                    cat .file2
+
+8. 
+
+
